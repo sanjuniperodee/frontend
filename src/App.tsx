@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
-import MapComponent from './components/Map/MapComponent';
-import LoginForm from './components/Auth/LoginForm';
-import RegisterForm from './components/Auth/RegisterForm';
-import Header from './components/Layout/Header';
-import AdminPanel from './components/Admin/AdminPanel';
-import UserProfile from './components/Profile/UserProfile';
-import HomePage from './components/Home/HomePage';
-import MarkersList from './components/Markers/MarkersList';
-import { useAuthStore } from './store/authStore';
+import MapComponent from './components/Map/MapComponent.tsx';
+import LoginForm from './components/Auth/LoginForm.tsx';
+import RegisterForm from './components/Auth/RegisterForm.tsx';
+import Header from './components/Layout/Header.tsx';
+import AdminPanel from './components/Admin/AdminPanel.tsx';
+import UserProfile from './components/Profile/UserProfile.tsx';
+import HomePage from './components/Home/HomePage.tsx';
+import MarkersList from './components/Markers/MarkersList.tsx';
+import { useAuthStore } from './store/authStore.ts';
 import {useEffect} from "react";
 
 const queryClient = new QueryClient();

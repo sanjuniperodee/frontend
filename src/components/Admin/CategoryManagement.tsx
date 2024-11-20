@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import { Plus, Edit2, Trash2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Category } from '../../types';
-import CategoryForm from './CategoryForm';
+import CategoryForm from './CategoryForm.tsx';
 
 export default function CategoryManagement() {
   const [isFormOpen, setIsFormOpen] = useState(false);

@@ -1,10 +1,10 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Users, MapPin, Tag, Settings, FileText, BarChart } from 'lucide-react';
-import UserManagement from './UserManagement';
-import MarkerManagement from './MarkerManagement';
-import CategoryManagement from './CategoryManagement';
-import SystemSettings from './SystemSettings';
-import AdvancedAnalytics from '../Analytics/AdvancedAnalytics';
+import UserManagement from './UserManagement.tsx';
+import MarkerManagement from './MarkerManagement.tsx';
+import CategoryManagement from './CategoryManagement.tsx';
+import SystemSettings from './SystemSettings.tsx';
+import AdvancedAnalytics from '../Analytics/AdvancedAnalytics.tsx';
 
 const navigation = [
   { name: 'Пользователи', path: 'users', icon: Users },

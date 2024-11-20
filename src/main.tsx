@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from './utils/errorBoundary';
-import App from './App';
+import App from './App.tsx';
 import './index.css';
 import { initSentry } from './utils/sentry';
 import { trackPageView } from './utils/analytics';

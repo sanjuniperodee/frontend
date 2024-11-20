@@ -26,11 +26,11 @@ export default function CategoryForm({ category, onClose }: CategoryFormProps) {
 
   const mutation = useMutation({
     mutationFn: async (data: CategoryFormData) => {
-      const url = category.id
+      const url = category
         ? `/v1/category/${category.id}`
         : '/v1/category';
+
       const method = category ? 'PUT' : 'POST';
-      
       const response = await fetch(import.meta.env.VITE_APP_DOMAIN + url,{
         method,
         headers: {
