@@ -55,11 +55,6 @@ export default function LoginForm() {
       <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-gray-900">Вход в систему</h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Для тестирования используйте:<br />
-            Логин: admin или user<br />
-            Пароль: любой
-          </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -109,7 +104,8 @@ export default function LoginForm() {
 
           <button
               type="submit"
-              disabled={isSubmitting || !captchaToken} // Disable submit if reCAPTCHA not completed
+              // disabled={isSubmitting || !captchaToken} // Disable submit if reCAPTCHA not completed
+              disabled={isSubmitting} // Disable submit if reCAPTCHA not completed
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
           >
             {isSubmitting ? 'Вход...' : 'Войти'}
