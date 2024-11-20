@@ -47,7 +47,7 @@ export default function App() {
               <Route path="/markers" element={<MarkersList />} />
 
               <Route path="/login" element={
-                isAuthenticated ? <Navigate to="" replace /> : (
+                isAuthenticated ? <Navigate to="/map" replace /> : (
                   <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-md w-full">
                       <LoginForm />
