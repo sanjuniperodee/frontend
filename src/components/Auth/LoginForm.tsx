@@ -33,15 +33,15 @@ export default function LoginForm() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    if (!captchaToken) {
-      setError('Подтвердите, что вы не робот.');
-      return;
-    }
+    // if (!captchaToken) {
+    //   setError('Подтвердите, что вы не робот.');
+    //   return;
+    // }
 
     try {
       setError(null);
       await login(data.username, data.password); // Pass captchaToken to backend
-      location.replace('/map');
+      // location.replace('/map');
     } catch (error) {
       setError('Неверное имя пользователя или пароль');
     }
