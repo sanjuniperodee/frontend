@@ -20,7 +20,7 @@ export default function CategoryForm({ category, onClose }) {
                 ? `/v1/category/${category.id}`
                 : '/v1/category';
             const method = category ? 'PUT' : 'POST';
-            const response = await fetch(import.meta.env.VITE_APP_DOMAI + url, {
+            const response = await fetch(import.meta.env.VITE_APP_DOMAIN + url, {
                 method,
                 headers: {
                     'Content-Type': 'application/json',
