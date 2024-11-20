@@ -84,7 +84,7 @@ export default function UserManagement() {
                       <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
                         {user.avatar ? (
                             <img
-                                src={user.avatar}
+                                src={`${import.meta.env.VITE_APP_DOMAIN}${user.avatar}`}
                                 alt=""
                                 className="h-10 w-10 rounded-full"
                             />
