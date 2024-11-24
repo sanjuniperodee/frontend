@@ -56,7 +56,7 @@ export const useCommentsStore = create<CommentsState>()(
                     toast.success('Комментарий добавлен');
                 } catch (error) {
                     console.error('Error adding comment:', error);
-                    toast.error('Не удалось добавить комментарий');
+                    toast.error('Нельзя оставить комментарий себей');
                 }
             },
 

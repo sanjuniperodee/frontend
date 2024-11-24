@@ -1,11 +1,11 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { useAuthStore } from '../../store/authStore';
+import { useAuthStore } from '../../store/authStore.ts';
 import { Comment } from '../../types';
 import { Send, Trash2 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useCommentsStore } from '../../store/commentsStore';
+import { useCommentsStore } from '../../store/commentsStore.ts';
 
 const commentSchema = z.object({
   text: z.string().min(1, 'Комментарий не может быть пустым'),

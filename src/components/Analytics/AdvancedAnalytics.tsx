@@ -11,6 +11,7 @@ export default function AdvancedAnalytics() {
       }
       return response.json();
     },
+    refetchInterval: 15000, // Refetch every 15 seconds
   });
 
   if (isLoading) {

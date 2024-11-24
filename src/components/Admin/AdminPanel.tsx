@@ -11,7 +11,6 @@ const navigation = [
   { name: 'Метки', path: 'markers', icon: MapPin },
   { name: 'Категории', path: 'categories', icon: Tag },
   { name: 'Аналитика', path: 'analytics', icon: BarChart },
-  { name: 'Настройки', path: 'settings', icon: Settings },
 ];
 
 export default function AdminPanel() {
