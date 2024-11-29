@@ -12,6 +12,18 @@ import MapFilters from './MapFilters';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/dist/styles.min.css';
 
+const DefaultIcon = L.icon({
+    iconUrl: markerIcon,
+    shadowUrl: markerShadow,
+    iconRetinaUrl: markerRetinaIcon,
+    iconSize: [25, 41], // Default size
+    iconAnchor: [12, 41], // Anchor point of the icon
+    popupAnchor: [1, -34], // Anchor point of the popup relative to the icon
+    shadowSize: [41, 41], // Default shadow size
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
+
 function MapEvents({ onMapClick }: { onMapClick: (e: L.LeafletMouseEvent) => void }) {
     const map = useMap();
 
