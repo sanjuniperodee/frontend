@@ -11,6 +11,17 @@ import MarkerPopup from './MarkerPopup';
 import MapFilters from './MapFilters';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/dist/styles.min.css';
+import "leaflet/dist/leaflet.css";
+import icon from "leaflet/dist/images/marker-icon.png";
+import L from "leaflet";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 function MapEvents({ onMapClick }: { onMapClick: (e: L.LeafletMouseEvent) => void }) {
     const map = useMap();
