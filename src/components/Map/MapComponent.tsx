@@ -4,8 +4,8 @@ import MarkerClusterGroup from 'react-leaflet-markercluster';
 import toast from 'react-hot-toast';
 import { Plus } from 'lucide-react';
 import { useAuthStore } from '../../store/authStore';
-import { useMarkers } from '../../hooks/useMarkers';
-import { MAP_CONFIG } from '../../utils/constants';
+import { useMarkers } from '../../hooks/useMarkers.ts';
+import { MAP_CONFIG } from '../../utils/constants.ts';
 import MarkerForm from './MarkerForm';
 import MarkerPopup from './MarkerPopup';
 import MapFilters from './MapFilters';
@@ -27,7 +27,7 @@ function MapEvents({ onMapClick }: { onMapClick: (e: L.LeafletMouseEvent) => voi
 
 export default function MapComponent() {
   const { user } = useAuthStore();
-  const { markers, createMarker } = useMarkers();
+  const { markers, createMarker, fetchMarkers } = useMarkers();
   const [isAddingMarker, setIsAddingMarker] = useState(false);
   const [newMarkerPosition, setNewMarkerPosition] = useState<[number, number] | null>(null);
   const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null);
@@ -38,6 +38,9 @@ export default function MapComponent() {
     }
   };
 
+    useEffect(() => {
+        fetchMarkers()
+    }, []);
 
   const handleMarkerCreate = async (data: { name: string; description: string; category: string }) => {
     if (!newMarkerPosition || !user) return;

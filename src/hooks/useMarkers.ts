@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Marker } from '../types';
 import { toast } from 'react-hot-toast';
-import { useMarkersStore } from '../store/markersStore';
+import { useMarkersStore } from '../store/markersStore.ts';
 import { useAuthStore } from '../store/authStore';
 import { useReputationStore } from '../store/reputationStore';
 import { useModerationStore } from '../store/moderationStore';
@@ -22,7 +22,7 @@ export function useMarkers() {
       connectToWebSocket
   } = useMarkersStore();
 
-  const { data: markers = storeMarkers, isLoading } = useQuery<Marker[]>({
+  const { data: markers, isLoading } = useQuery<Marker[]>({
     queryKey: ['markers'],
     queryFn: () => mockApi.markers.getAll(),
     initialData: storeMarkers,
@@ -40,8 +40,7 @@ export function useMarkers() {
 
       // Add to store but marked as not approved
       addMarkerToStore(newMarker);
-      toast.success('Метка успешно создана и отправлена на модерацию');
-      return newMarker;
+      // return newMarker;
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['markers'] });

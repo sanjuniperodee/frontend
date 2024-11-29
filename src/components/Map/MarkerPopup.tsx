@@ -11,7 +11,7 @@ interface MarkerPopupProps {
   onClose: () => void;
 }
 
-export default function MarkerPopup({ marker, onClose }: MarkerPopupProps) {
+export default function MarkerPopup({ marker, onClose, fetchMarkers }: MarkerPopupProps) {
   const { user } = useAuthStore();
   const [showComments, setShowComments] = useState(false);
   const { rateMarker } = useMarkers();
@@ -23,7 +23,11 @@ export default function MarkerPopup({ marker, onClose }: MarkerPopupProps) {
     }
 
     try {
-      await rateMarker.mutateAsync({ markerId: marker.id, rating });
+      await rateMarker.mutateAsync({ markerId: marker.id, rating }).then(()=>{
+        if(marker.rating == 0)
+          marker.rating += rating
+        else marker.rating += rating*2
+      });
     } catch (error) {
       console.log(error)
       toast.error('Ошибка при оценке метки');

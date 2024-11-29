@@ -35,7 +35,7 @@ export const mockApi = {
       if (!response.ok) {
         throw new Error('Failed to create marker');
       }
-      return response.json();
+      // return response.json();
     },
     update: async (marker: Marker): Promise<Marker> => {
       const response = await fetch(`${import.meta.env.VITE_APP_DOMAIN}/v1/marker/${marker.id}/update`, {

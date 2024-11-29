@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import { useMarkers } from '../../hooks/useMarkers';
 import { useCategories } from '../../hooks/useCategories';
 import { Search, Filter } from 'lucide-react';
-import MarkerPopup from '../Map/MarkerPopup';
+import MarkerPopup from '../Map/MarkerPopup.tsx';
 import { Marker } from '../../types';
 
 export default function MarkersList() {
@@ -128,6 +128,7 @@ export default function MarkersList() {
             <MarkerPopup
               marker={selectedMarker}
               onClose={() => setSelectedMarker(null)}
+              fetchMarkers={() => fetchMarkers()}
             />
           </div>
         </div>
